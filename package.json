@@ -9,5 +9,10 @@
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.8.0",
         "vite": "^4.0.0"
+    },
+    "dependencies": {
+        "@headlessui/vue": "^1.7.16",
+        "@heroicons/vue": "^2.0.18",
+        "heroicons-react": "^1.4.1"
     }
 }
