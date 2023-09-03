@@ -1,31 +1,22 @@
 <template>
-  
-  <header class="bg-white shadow">
-        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
-        </div>
-      </header>
-      <main>
-        <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-          <!-- Your content -->
-          <div class="px-4 py-6 sm:px-6 lg:px-8">
-          <!--content goes here-->
-          </div>
-
-        </div>
-      </main>
-
-
-
+ 
+ <PageComponent title="Dashboard">
+  Content goes here
+ </PageComponent>
+ 
 </template>
   
-<script>
-export default{
-    name: "Dashboard"
-}
+<script setup>
+import PageComponent from "../components/PageComponent.vue";
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+
+const loading = computed(() => store.state.dashboard.loading);
+const data = computed(() => store.state.dashboard.data);
+
+store.dispatch("getDashboardData");
 </script>
 
-<style scoped>
-
-
-</style>
+<style scoped></style>
