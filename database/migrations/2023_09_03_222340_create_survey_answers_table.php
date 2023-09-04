@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('survey_answers', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Survey::class, 'survey_id');
+            $table->foreignIdFor(\App\Model\Survey::class, 'survey_id');
             $table->timestamp('start_date')->nullable();
             $table->timestamp('end_date')->nullable();
         });
